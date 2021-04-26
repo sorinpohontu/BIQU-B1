@@ -32,3 +32,6 @@ A great build plate is [BIQU SSS Super Spring Steel Sheet](https://www.biqu.equi
     - https://3dwork.io/en/complete-guide-skr-v1-4-and-tmc2209
     - https://www.jayuk.org/bigtreetech-skr-v1-4-normal-and-turbo-and-fysetc-tmc2209-v3
     - https://3dprintbeginner.com/biqu-b1-hotend-fix-bi-metal-heat-break/
+    - https://www.reddit.com/r/BIGTREETECH/comments/j55rt3/biqub1_firmware_updating_bltouch_guide_a/
+
+    - https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/BIQU/B1-BLTouch
