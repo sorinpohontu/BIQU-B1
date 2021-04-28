@@ -28,6 +28,10 @@ A great build plate is [BIQU SSS Super Spring Steel Sheet](https://www.biqu.equi
 ## Hotend
 - [Chimera Hotend](https://www.biqu.equipment/products/chimera-hotend-12-24v-j-head-bowden-extruder-kits-mk8-nozzle-chimera-pipe-for-3d-printer-parts-e3d-hotend-upgrade)
 
+### Hotend fixes
+- https://www.thingiverse.com/thing:4626617
+- https://www.thingiverse.com/thing:4837928
+
 # References
     - https://3dwork.io/en/complete-guide-skr-v1-4-and-tmc2209
     - https://www.jayuk.org/bigtreetech-skr-v1-4-normal-and-turbo-and-fysetc-tmc2209-v3
