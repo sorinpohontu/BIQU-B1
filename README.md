@@ -32,6 +32,21 @@ A great build plate is [BIQU SSS Super Spring Steel Sheet](https://www.biqu.equi
 - https://www.thingiverse.com/thing:4626617
 - https://www.thingiverse.com/thing:4837928
 
+# Marlin
+
+## [Unified Bed Leveling](https://marlinfw.org/docs/features/unified_bed_leveling.html)
+
+;------------------------------------------
+;--- Setup and initial probing commands ---
+;------------------------------------------
+M190 S60        ; Not required, but having the printer at temperature helps accuracy
+M104 S200       ; Not required, but having the printer at temperature helps accuracy
+
+G28             ; Home XYZ.
+G29 P1          ; Do automated probing of the bed.
+G29 S1          ; Save UBL mesh points to EEPROM.
+M500            ; Save current setup. WARNING: UBL will be active at power up, before any `G28`
+
 # References
     - https://3dwork.io/en/complete-guide-skr-v1-4-and-tmc2209
     - https://www.jayuk.org/bigtreetech-skr-v1-4-normal-and-turbo-and-fysetc-tmc2209-v3
