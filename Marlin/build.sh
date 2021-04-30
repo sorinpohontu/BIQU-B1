@@ -28,15 +28,16 @@ sed -i.bak 's|#define NOZZLE_TO_PROBE_OFFSET { 24, -47, -1.5 }|#define NOZZLE_TO
 echo '>>> BMG Extruder: 415 steps'
 sed -i.bak 's|#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 96 }|#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 415 }|g' Marlin/Configuration.h
 
-echo '>>> Disabling SDCARD'
-sed -i.bak 's|#define SDSUPPORT|//#define SDSUPPORT|g' Marlin/Configuration.h
-sed -i.bak 's|#define AUTO_REPORT_SD_STATUS|//#define AUTO_REPORT_SD_STATUS|g' Marlin/Configuration_adv.h
-
-echo '>>> Trinamic config'
+echo '>>> Trinamic drivers'
 sed -i.bak 's|//#define MONITOR_DRIVER_STATUS|#define MONITOR_DRIVER_STATUS|g' Marlin/Configuration_adv.h
-sed -i.bak 's|//#define TMC_DEBUG|#define TMC_DEBUG|g' Marlin/Configuration_adv.h
 
-echo '>>> PREHEAT_BEFORE_LEVELING'
+echo '>>> Enable filament runout'
+sed -i.bak 's|//#define FILAMENT_RUNOUT_SENSOR|#define FILAMENT_RUNOUT_SENSOR|g' Marlin/Configuration.h
+
+echo '>>> Faster HOMING_FEEDRATE'
+sed -i.bak 's|#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }|#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (8*60) }|g' Marlin/Configuration.h
+
+echo '>>> Enable PREHEAT_BEFORE_LEVELING'
 sed -i.bak 's|//#define PREHEAT_BEFORE_LEVELING|#define PREHEAT_BEFORE_LEVELING|g' Marlin/Configuration.h
 sed -i.bak 's|#define LEVELING_NOZZLE_TEMP 120|#define LEVELING_NOZZLE_TEMP 210|g' Marlin/Configuration.h
 sed -i.bak 's|#define LEVELING_BED_TEMP     50|#define LEVELING_BED_TEMP     60|g' Marlin/Configuration.h
@@ -53,6 +54,16 @@ sed -i.bak 's|#define PREHEAT_2_TEMP_BED     80|#define PREHEAT_2_TEMP_BED     7
 sed -i.bak 's|#define PREHEAT_3_LABEL       "ABS"|#define PREHEAT_3_LABEL       "ASA"|g' Marlin/Configuration.h
 sed -i.bak 's|#define PREHEAT_3_TEMP_HOTEND 240|#define PREHEAT_3_TEMP_HOTEND 240|g' Marlin/Configuration.h
 sed -i.bak 's|#define PREHEAT_3_TEMP_BED    110|#define PREHEAT_3_TEMP_BED     90|g' Marlin/Configuration.h
+
+echo '>>> Enable SLIM_LCD_MENUS'
+sed -i.bak 's|//#define SLIM_LCD_MENUS|#define SLIM_LCD_MENUS|g' Marlin/Configuration.h
+
+echo '>>> Faster BLTouch'
+sed -i.bak 's|//#define BLTOUCH_DELAY 500|#define BLTOUCH_DELAY 200|g' Marlin/Configuration_adv.h
+
+echo '>>> Disable SDCARD'
+sed -i.bak 's|#define SDSUPPORT|//#define SDSUPPORT|g' Marlin/Configuration.h
+sed -i.bak 's|#define AUTO_REPORT_SD_STATUS|//#define AUTO_REPORT_SD_STATUS|g' Marlin/Configuration_adv.h
 
 echo '>>> Building Marlin ...'
 pio run -e LPC1768
