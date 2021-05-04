@@ -15,6 +15,7 @@ curl -sSL https://github.com/MarlinFirmware/Configurations/raw/import-2.0.x/conf
 echo '>>> Use AUTO_BED_LEVELING_UBL'
 sed -i.bak 's|#define AUTO_BED_LEVELING_BILINEAR|//#define AUTO_BED_LEVELING_BILINEAR|g' Marlin/Configuration.h
 sed -i.bak 's|//#define AUTO_BED_LEVELING_UBL|#define AUTO_BED_LEVELING_UBL|g' Marlin/Configuration.h
+sed -i.bak 's|//#define UBL_MESH_WIZARD|#define UBL_MESH_WIZARD|g' Marlin/Configuration.h
 
 echo '>>> Enable USE_PROBE_FOR_Z_HOMING and Z_SAFE_HOMING | '
 sed -i.bak 's|//#define USE_PROBE_FOR_Z_HOMING|#define USE_PROBE_FOR_Z_HOMING|g' Marlin/Configuration.h
@@ -27,9 +28,6 @@ sed -i.bak 's|#define NOZZLE_TO_PROBE_OFFSET { 24, -47, -1.5 }|#define NOZZLE_TO
 
 echo '>>> BMG Extruder: 415 steps'
 sed -i.bak 's|#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 96 }|#define DEFAULT_AXIS_STEPS_PER_UNIT   { 80, 80, 400, 415 }|g' Marlin/Configuration.h
-
-echo '>>> Trinamic drivers'
-sed -i.bak 's|//#define MONITOR_DRIVER_STATUS|#define MONITOR_DRIVER_STATUS|g' Marlin/Configuration_adv.h
 
 echo '>>> Enable filament runout'
 sed -i.bak 's|//#define FILAMENT_RUNOUT_SENSOR|#define FILAMENT_RUNOUT_SENSOR|g' Marlin/Configuration.h
@@ -55,11 +53,17 @@ sed -i.bak 's|#define PREHEAT_3_LABEL       "ABS"|#define PREHEAT_3_LABEL       
 sed -i.bak 's|#define PREHEAT_3_TEMP_HOTEND 240|#define PREHEAT_3_TEMP_HOTEND 240|g' Marlin/Configuration.h
 sed -i.bak 's|#define PREHEAT_3_TEMP_BED    110|#define PREHEAT_3_TEMP_BED     90|g' Marlin/Configuration.h
 
-echo '>>> Enable SLIM_LCD_MENUS'
-sed -i.bak 's|//#define SLIM_LCD_MENUS|#define SLIM_LCD_MENUS|g' Marlin/Configuration.h
+echo '>>> Enable Meatpack'
+sed -i.bak 's|//#define MEATPACK_ON_SERIAL_PORT_1|#define MEATPACK_ON_SERIAL_PORT_1|g' Marlin/Configuration_adv.h
+sed -i.bak 's|//#define MEATPACK_ON_SERIAL_PORT_2|#define MEATPACK_ON_SERIAL_PORT_2|g' Marlin/Configuration_adv.h
 
 echo '>>> Faster BLTouch'
 sed -i.bak 's|//#define BLTOUCH_DELAY 500|#define BLTOUCH_DELAY 200|g' Marlin/Configuration_adv.h
+
+echo '>>> Setup Trinamic drivers'
+sed -i.bak 's|//#define MONITOR_DRIVER_STATUS|#define MONITOR_DRIVER_STATUS|g' Marlin/Configuration_adv.h
+sed -i.bak 's|//#define TMC_DEBUG|#define TMC_DEBUG|g' Marlin/Configuration_adv.h
+sed -i.bak 's|#define STOP_ON_ERROR|//#define STOP_ON_ERROR|g' Marlin/Configuration_adv.h
 
 echo '>>> Disable SDCARD'
 sed -i.bak 's|#define SDSUPPORT|//#define SDSUPPORT|g' Marlin/Configuration.h
