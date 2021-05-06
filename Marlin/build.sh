@@ -6,7 +6,7 @@ mkdir .marlin-build
 cd .marlin-build
 
 echo '>>> Cloning Marlin Firmware ...'
-git clone --branch bugfix-2.0.x --single-branch https://github.com/MarlinFirmware/Marlin.git .
+git clone --branch 2.0.x --single-branch https://github.com/MarlinFirmware/Marlin.git .
 
 echo '>>> Updating Marlin configuration: BIQU/B1-BLTouch ...'
 curl -sSL https://github.com/MarlinFirmware/Configurations/raw/import-2.0.x/config/examples/BIQU/B1-BLTouch/Configuration.h -o Marlin/Configuration.h
