@@ -21,7 +21,6 @@ echo '>>> Enable USE_PROBE_FOR_Z_HOMING and Z_SAFE_HOMING | '
 sed -i.bak 's|//#define USE_PROBE_FOR_Z_HOMING|#define USE_PROBE_FOR_Z_HOMING|g' Marlin/Configuration.h
 sed -i.bak 's|//#define Z_SAFE_HOMING|#define Z_SAFE_HOMING|g' Marlin/Configuration.h
 sed -i.bak 's|//#define Z_MIN_PROBE_REPEATABILITY_TEST|#define Z_MIN_PROBE_REPEATABILITY_TEST|g' Marlin/Configuration.h
-sed -i.bak 's|#define MESH_INSET 1 |#define MESH_INSET 40|g' Marlin/Configuration.h
 
 echo '>>> NOZZLE_TO_PROBE_OFFSET'
 sed -i.bak 's|#define NOZZLE_TO_PROBE_OFFSET { 24, -47, -1.5 }|#define NOZZLE_TO_PROBE_OFFSET { 40, 30, -1.5 }|g' Marlin/Configuration.h
