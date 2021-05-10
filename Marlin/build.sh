@@ -12,10 +12,8 @@ echo '>>> Updating Marlin configuration: BIQU/B1-BLTouch ...'
 curl -sSL https://github.com/MarlinFirmware/Configurations/raw/import-2.0.x/config/examples/BIQU/B1-BLTouch/Configuration.h -o Marlin/Configuration.h
 curl -sSL https://github.com/MarlinFirmware/Configurations/raw/import-2.0.x/config/examples/BIQU/B1-BLTouch/Configuration_adv.h -o Marlin/Configuration_adv.h
 
-echo '>>> Use AUTO_BED_LEVELING_UBL'
-sed -i.bak 's|#define AUTO_BED_LEVELING_BILINEAR|//#define AUTO_BED_LEVELING_BILINEAR|g' Marlin/Configuration.h
-sed -i.bak 's|//#define AUTO_BED_LEVELING_UBL|#define AUTO_BED_LEVELING_UBL|g' Marlin/Configuration.h
-sed -i.bak 's|//#define UBL_MESH_WIZARD|#define UBL_MESH_WIZARD|g' Marlin/Configuration.h
+echo '>>> Setup AUTO_BED_LEVELING_BILINEAR'
+sed -i.bak 's|#define GRID_MAX_POINTS_X 3$|#define GRID_MAX_POINTS_X 6|g' Marlin/Configuration.h
 
 echo '>>> Enable USE_PROBE_FOR_Z_HOMING and Z_SAFE_HOMING | '
 sed -i.bak 's|//#define USE_PROBE_FOR_Z_HOMING|#define USE_PROBE_FOR_Z_HOMING|g' Marlin/Configuration.h
@@ -36,7 +34,7 @@ sed -i.bak 's|#define HOMING_FEEDRATE_MM_M { (50*60), (50*60), (4*60) }|#define 
 
 echo '>>> Enable PREHEAT_BEFORE_LEVELING'
 sed -i.bak 's|//#define PREHEAT_BEFORE_LEVELING|#define PREHEAT_BEFORE_LEVELING|g' Marlin/Configuration.h
-sed -i.bak 's|#define LEVELING_NOZZLE_TEMP 120|#define LEVELING_NOZZLE_TEMP 210|g' Marlin/Configuration.h
+sed -i.bak 's|#define LEVELING_NOZZLE_TEMP 120|#define LEVELING_NOZZLE_TEMP 215|g' Marlin/Configuration.h
 sed -i.bak 's|#define LEVELING_BED_TEMP     50|#define LEVELING_BED_TEMP     60|g' Marlin/Configuration.h
 
 echo '>>> PREHEAT PRESETS'
