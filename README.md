@@ -27,6 +27,11 @@ A great build plate is [BIQU SSS Super Spring Steel Sheet](https://www.biqu.equi
 
 ## Hotend
 - [Chimera Hotend](https://www.biqu.equipment/products/chimera-hotend-12-24v-j-head-bowden-extruder-kits-mk8-nozzle-chimera-pipe-for-3d-printer-parts-e3d-hotend-upgrade)
+- [Chimera Heat sink](https://www.aliexpress.com/item/4000212189833.html)
+- [Aluminium Heater Block](https://www.aliexpress.com/item/32967255703.html)
+- [Trianglelab MK8 Silicone Sock](https://www.aliexpress.com/item/32922586044.html)
+- [Mellow Bi Metal Heatbreak](https://www.aliexpress.com/item/4000853239324.html)
+- [Alternative Hot End Kit](https://www.aliexpress.com/item/32825580863.html)
 
 ### Hotend fixes
 - https://www.thingiverse.com/thing:4626617
@@ -57,4 +62,4 @@ M500            ; Save current setup. WARNING: UBL will be active at power up, b
     - https://3dprintbeginner.com/biqu-b1-hotend-fix-bi-metal-heat-break/
     - https://www.reddit.com/r/BIGTREETECH/comments/j55rt3/biqub1_firmware_updating_bltouch_guide_a/
 
-    - https://github.com/MarlinFirmware/Configurations/tree/import-2.0.x/config/examples/BIQU/B1-BLTouch
+    - https://www.aliexpress.com/item/4000212189833.html
