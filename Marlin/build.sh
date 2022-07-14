@@ -15,7 +15,7 @@ curl -sSL https://github.com/MarlinFirmware/Configurations/raw/import-2.0.x/conf
 echo '>>> Setup AUTO_BED_LEVELING_BILINEAR'
 sed -i.bak 's|#define GRID_MAX_POINTS_X 3$|#define GRID_MAX_POINTS_X 6|g' Marlin/Configuration.h
 
-echo '>>> Enable USE_PROBE_FOR_Z_HOMING and Z_SAFE_HOMING | '
+echo '>>> Enable USE_PROBE_FOR_Z_HOMING and Z_SAFE_HOMING'
 sed -i.bak 's|//#define USE_PROBE_FOR_Z_HOMING|#define USE_PROBE_FOR_Z_HOMING|g' Marlin/Configuration.h
 sed -i.bak 's|//#define Z_SAFE_HOMING|#define Z_SAFE_HOMING|g' Marlin/Configuration.h
 sed -i.bak 's|//#define Z_MIN_PROBE_REPEATABILITY_TEST|#define Z_MIN_PROBE_REPEATABILITY_TEST|g' Marlin/Configuration.h
